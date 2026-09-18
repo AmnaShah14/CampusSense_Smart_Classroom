@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusSense — Smart Classroom Occupancy & Energy Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">CampusSense</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <a href="#dashboard" class="btn-primary">Live Demo</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="badge">PS 12 · Smart India Hackathon Style</div>
+      <h1>Sense Reality.<br>Understand Context.<br>Act Automatically.</h1>
+      <p class="hero-sub">
+        A campus-wide occupancy intelligence & energy orchestration platform.
+        Live sensor data + official timetable → automated energy control + utilisation analytics.
+      </p>
+      <div class="hero-actions">
+        <a href="#solution" class="btn-primary">Explore the Platform</a>
+        <a href="#how-it-works" class="btn-secondary">See How it Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">₹1,930</span>
+          <span class="stat-label">Per classroom node</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Room states classified</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Closed-loop</span>
+          <span class="stat-label">Detect → Decide → Act → Verify</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="room-card occupied">
+        <div class="room-status">OCCUPIED · Scheduled</div>
+        <div class="room-name">Lab 01</div>
+        <div class="room-meta">Circuit ON · 14:18</div>
+      </div>
+      <div class="room-card vacant">
+        <div class="room-status">VACANT · Auto OFF</div>
+        <div class="room-name">Lab 02</div>
+        <div class="room-meta">Saved 18 min · 14:42</div>
+      </div>
+      <div class="room-card anomaly">
+        <div class="room-status">ANOMALY · Unbooked</div>
+        <div class="room-name">Room 305</div>
+        <div class="room-meta">Alert raised</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="section problem">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What is broken today?</span>
+        <h2>Rooms don’t behave the way the timetable says they do.</h2>
+        <p>Free periods, cancelled lectures, extra practicals and irregular lab bookings shift the campus daily — and nobody can see it.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-num">01</div>
+          <h3>No live visibility</h3>
+          <p>Faculty and admin cannot verify whether a scheduled room is actually in use — “is this room free?” stays a guess.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-num">02</div>
+          <h3>Timetable ≠ reality</h3>
+          <p>Cancellations, extra lectures and unbooked lab sessions never reach the official schedule.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-num">03</div>
+          <h3>Energy runs on habit</h3>
+          <p>Lights, fans and projectors stay on in empty rooms until a person happens to notice and switch them off.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-num">04</div>
+          <h3>No utilisation record</h3>
+          <p>Renovation, timetable and new-section decisions are taken without any evidence of how rooms are really used.</p>
+        </div>
+      </div>
+
+      <!-- One Lab One Day -->
+      <div class="illustration-card">
+        <h3>ONE LAB, ONE DAY — illustrative example</h3>
+        <div class="timeline">
+          <div class="time-col">
+            <div class="time">8 AM</div>
+            <div class="tt">Scheduled</div>
+            <div class="reality good">Occupied</div>
+          </div>
+          <div class="time-col">
+            <div class="time">10 AM</div>
+            <div class="tt">Scheduled</div>
+            <div class="reality bad">Empty</div>
+            <div class="note">Booked but empty</div>
+          </div>
+          <div class="time-col">
+            <div class="time">12 PM</div>
+            <div class="tt">Free</div>
+            <div class="reality warn">Occupied</div>
+            <div class="note">Unbooked use</div>
+          </div>
+          <div class="time-col">
+            <div class="time">2 PM</div>
+            <div class="tt">Scheduled</div>
+            <div class="reality good">Occupied</div>
+          </div>
+          <div class="time-col">
+            <div class="time">4 PM</div>
+            <div class="tt">Scheduled</div>
+            <div class="reality bad">Empty</div>
+            <div class="note">Booked but empty</div>
+          </div>
+          <div class="time-col">
+            <div class="time">6 PM</div>
+            <div class="tt">Free</div>
+            <div class="reality warn">Occupied</div>
+            <div class="note">After-hours use</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section id="solution" class="section solution">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What exactly are we building?</span>
+        <h2>Five layers. One platform.</h2>
+        <p>The sensor and relay are the mandatory foundation. <strong>The innovation is the decision layer built around them.</strong></p>
+      </div>
+      <div class="layers">
+        <div class="layer">
+          <div class="layer-num">1</div>
+          <h3>Smart Room Sensing</h3>
+          <ul>
+            <li>PIR / ultrasonic sensor + ESP32 per room</li>
+            <li>Real-time occupied / vacant state</li>
+            <li>Occupancy count as stretch feature</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <div class="layer-num">2</div>
+          <h3>Intelligent Occupancy Engine</h3>
+          <ul>
+            <li>Live sensor data + official timetable</li>
+            <li>Bookings, time of day, history</li>
+            <li>Classifies six distinct room states</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <div class="layer-num">3</div>
+          <h3>Automated Energy Control</h3>
+          <ul>
+            <li>Vacancy past threshold → relay OFF</li>
+            <li>Occupancy resumes → circuit restored</li>
+            <li>Every switching event timestamped</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <div class="layer-num">4</div>
+          <h3>Centralised Dashboard</h3>
+          <ul>
+            <li>Live campus status and heatmap</li>
+            <li>Alerts, overrides, room lookup</li>
+            <li>Role-based faculty / admin views</li>
+          </ul>
+        </div>
+        <div class="layer">
+          <div class="layer-num">5</div>
+          <h3>Analytics & Intelligence</h3>
+          <ul>
+            <li>Utilisation and mismatch analytics</li>
+            <li>Peak-usage and anomaly detection</li>
+            <li>Energy-saving estimation per room</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section id="how-it-works" class="section how">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">End-to-end flow</span>
+        <h2>Closed loop: Detect → Decide → Act → Verify → Learn</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-icon">📡</div>
+          <h4>Sense</h4>
+          <p>PIR / ultrasonic detects presence</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">📶</div>
+          <h4>Transmit</h4>
+          <p>ESP32 publishes occupancy event</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">🧠</div>
+          <h4>Understand</h4>
+          <p>Sensor + timetable + history</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">⚖️</div>
+          <h4>Decide</h4>
+          <p>Room state & action</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">🔌</div>
+          <h4>Act</h4>
+          <p>Relay switches circuit</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-icon">✅</div>
+          <h4>Verify</h4>
+          <p>State confirmed back</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="scenario">
+          <h3>ENTRY</h3>
+          <p>Person enters the room</p>
+          <ol>
+            <li>PIR / ultrasonic detects presence</li>
+            <li>ESP32 publishes occupancy event</li>
+            <li>Dashboard flips to OCCUPIED</li>
+            <li>Relay holds light / fan ON</li>
+            <li>Event logged with timestamp</li>
+          </ol>
+        </div>
+        <div class="scenario">
+          <h3>EXIT</h3>
+          <p>Person leaves and the room stays empty</p>
+          <ol>
+            <li>Vacancy detected</li>
+            <li>Configurable timeout begins</li>
+            <li>Threshold exceeded</li>
+            <li>ESP32 triggers relay → OFF</li>
+            <li>Energy-saving event logged</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Mock -->
+  <section id="dashboard" class="section dashboard">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What the operator sees</span>
+        <h2>Campus Occupancy & Energy Console</h2>
+        <p>Illustrative demo data — every number traces back to a timestamped event.</p>
+      </div>
+
+      <div class="dash-grid">
+        <div class="kpi">
+          <span class="kpi-val">48</span>
+          <span class="kpi-label">Total Rooms</span>
+        </div>
+        <div class="kpi occupied">
+          <span class="kpi-val">21</span>
+          <span class="kpi-label">Occupied Now</span>
+        </div>
+        <div class="kpi vacant">
+          <span class="kpi-val">27</span>
+          <span class="kpi-label">Vacant</span>
+        </div>
+        <div class="kpi warn">
+          <span class="kpi-val">4</span>
+          <span class="kpi-label">Scheduled but Empty</span>
+        </div>
+        <div class="kpi alert">
+          <span class="kpi-val">2</span>
+          <span class="kpi-label">Unscheduled Occupancy</span>
+        </div>
+        <div class="kpi energy">
+          <span class="kpi-val">18.6</span>
+          <span class="kpi-label">Est. kWh Saved Today</span>
+        </div>
+      </div>
+
+      <div class="dash-panels">
+        <div class="panel">
+          <h4>Live Room Status</h4>
+          <div class="room-list">
+            <div class="room-row ok"><span>Lab 01</span><span>Occupied · scheduled</span></div>
+            <div class="room-row warn"><span>Room 204</span><span>Vacant · scheduled</span></div>
+            <div class="room-row alert"><span>Room 305</span><span>Occupied · unbooked</span></div>
+            <div class="room-row off"><span>Lab 02</span><span>Vacant · auto OFF</span></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>Alerts</h4>
+          <div class="alert-list">
+            <div class="alert-item">Room 204 — Booked, empty 25 min</div>
+            <div class="alert-item">Room 305 — Occupied, no booking</div>
+            <div class="alert-item">Lab 04 — Relay did not confirm</div>
+            <div class="alert-item">Room 112 — Manual override active</div>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>Recent Automation Events</h4>
+          <div class="event-list">
+            <div class="event"><span>14:42</span> Lab 02 · Vacant 15 min → circuit OFF</div>
+            <div class="event"><span>14:31</span> Room 204 · Scheduled, no presence → alert</div>
+            <div class="event"><span>14:18</span> Lab 01 · Occupancy resumed → circuit ON</div>
+            <div class="event"><span>14:05</span> Room 305 · Unbooked occupancy → flagged</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intelligence -->
+  <section id="intelligence" class="section intel">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Where is the intelligence?</span>
+        <h2>We separate automation from intelligence — honestly.</h2>
+      </div>
+      <div class="intel-grid">
+        <div class="intel-card">
+          <h3>IoT Layer (Phase 1)</h3>
+          <p>Deterministic, rule-based</p>
+          <ul>
+            <li>PIR / ultrasonic sensing</li>
+            <li>ESP32 state machine</li>
+            <li>Relay switching</li>
+            <li>Event logging</li>
+          </ul>
+        </div>
+        <div class="intel-card highlight">
+          <h3>Intelligence Layer (Phase 2+)</h3>
+          <p>Analytics on collected history</p>
+          <ul>
+            <li>Timetable mismatch detection</li>
+            <li>Historical utilisation analysis</li>
+            <li>Peak-usage prediction</li>
+            <li>Anomaly & odd-hour detection</li>
+          </ul>
+        </div>
+      </div>
+      <p class="honest-note">We do not claim PIR detection is AI. Rule-based automation ships first; predictive models are trained only once real occupancy history exists.</p>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section id="impact" class="section impact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why this matters</span>
+        <h2>Impact we can actually measure</h2>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <h3>Operational</h3>
+          <ul>
+            <li>Real-time room availability</li>
+            <li>Reduced manual monitoring rounds</li>
+            <li>Faster ad-hoc room allocation</li>
+          </ul>
+        </div>
+        <div class="impact-card">
+          <h3>Energy</h3>
+          <ul>
+            <li>Reduced unnecessary runtime</li>
+            <li>Automated, consistent switching</li>
+            <li>Room-level energy reporting</li>
+          </ul>
+        </div>
+        <div class="impact-card">
+          <h3>Administrative</h3>
+          <ul>
+            <li>Evidence-based utilisation insight</li>
+            <li>Timetable mismatch detection</li>
+            <li>Infrastructure planning data</li>
+          </ul>
+        </div>
+        <div class="impact-card">
+          <h3>Sustainability</h3>
+          <ul>
+            <li>Less energy wasted on empty rooms</li>
+            <li>Data-driven campus energy policy</li>
+            <li>Repeatable across buildings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section class="section usps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why is this different?</span>
+        <h2>Five things a motion-sensor project cannot do</h2>
+      </div>
+      <div class="usp-list">
+        <div class="usp">
+          <span class="usp-num">01</span>
+          <div>
+            <h3>Context-Aware Occupancy</h3>
+            <p>Sensor data is read together with the official timetable and booking context — so the system knows the difference between an empty room at 11 AM on a Tuesday and an empty room at 9 PM.</p>
+          </div>
+        </div>
+        <div class="usp">
+          <span class="usp-num">02</span>
+          <div>
+            <h3>Closed-Loop Automation</h3>
+            <p>Detect → decide → physically control → verify → log. The loop closes on real hardware and confirms that the circuit actually changed state.</p>
+          </div>
+        </div>
+        <div class="usp">
+          <span class="usp-num">03</span>
+          <div>
+            <h3>Timetable Reality Check</h3>
+            <p>Identifies “booked but empty” and “occupied but unbooked” rooms automatically and routes each to the right person for review.</p>
+          </div>
+        </div>
+        <div class="usp">
+          <span class="usp-num">04</span>
+          <div>
+            <h3>Campus Utilisation Intelligence</h3>
+            <p>Historical occupancy becomes evidence for room allocation, timetable revision, new sections and infrastructure planning.</p>
+          </div>
+        </div>
+        <div class="usp">
+          <span class="usp-num">05</span>
+          <div>
+            <h3>Explainable Energy Automation</h3>
+            <p>Every automated switching action carries a timestamp, a reason and a room-level record — auditable, not a black box.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech & Cost -->
+  <section class="section tech">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Technology & Cost</span>
+        <h2>A stack we can actually build, wire and demonstrate</h2>
+      </div>
+      <div class="tech-grid">
+        <div>
+          <h3>Hardware</h3>
+          <ul>
+            <li>ESP32 (Wi-Fi MCU)</li>
+            <li>PIR / ultrasonic sensor</li>
+            <li>Relay module (opto-isolated)</li>
+            <li>Sample light / fan circuit</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Backend</h3>
+          <ul>
+            <li>Python · FastAPI / Flask</li>
+            <li>MQTT broker + REST</li>
+            <li>PostgreSQL / MySQL</li>
+            <li>Rule & threshold engine</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <ul>
+            <li>React dashboard</li>
+            <li>Streamlit rapid demo</li>
+            <li>Role-based views</li>
+            <li>Live status updates</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Per-room cost</h3>
+          <div class="cost-box">
+            <span class="cost">₹ 1,930</span>
+            <p>Complete classroom node<br>Marginal cost only — backend is shared</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="section team">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Meet the Team</span>
+        <h2>Anjuman-I-Islam Abdul Razzak Kalsekar Polytechnic</h2>
+      </div>
+      <div class="team-grid">
+        <div class="member leader">
+          <div class="avatar">SA</div>
+          <h3>Shah Amna Altaf</h3>
+          <p>Team Leader</p>
+        </div>
+        <div class="member">
+          <div class="avatar">KM</div>
+          <h3>Khan Mahek Sajid</h3>
+          <p>Team Member</p>
+        </div>
+        <div class="member">
+          <div class="avatar">SA</div>
+          <h3>Shaikh Ayaan Akil</h3>
+          <p>Team Member</p>
+        </div>
+        <div class="member">
+          <div class="avatar">KF</div>
+          <h3>Khan Fatir Mubashshirali</h3>
+          <p>Team Member</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>CampusSense</strong> — Sense reality. Understand context. Act automatically.</p>
+      <p>PS 12 · Smart Classroom Occupancy & Energy Management System</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
